@@ -125,22 +125,22 @@ class bcolors:
 def vul_info(val):
     result =''
     if val == 'c':
-        result = bcolors.FG_WHITE + bcolors.BG_CRIT_TXT + " critical " + bcolors.ENDC
+        result = bcolors.BG_CRIT_TXT+" critical "+bcolors.ENDC
     elif val == 'h':
-        result = bcolors.FG_WHITE + bcolors.BG_HIGH_TXT + " high " + bcolors.ENDC
+        result = bcolors.BG_HIGH_TXT+" high "+bcolors.ENDC
     elif val == 'm':
-        result = bcolors.FG_WHITE + bcolors.BG_MED_TXT + " medium " + bcolors.ENDC
+        result = bcolors.BG_MED_TXT+" medium "+bcolors.ENDC
     elif val == 'l':
-        result = bcolors.FG_WHITE + bcolors.BG_LOW_TXT + " low " + bcolors.ENDC
+        result = bcolors.BG_LOW_TXT+" low "+bcolors.ENDC
     else:
-        result = bcolors.FG_WHITE + bcolors.BG_INFO_TXT + " info " + bcolors.ENDC
-    return result
+        result = bcolors.BG_INFO_TXT+" info "+bcolors.ENDC
+    return result    
 
 
 # Legends
-proc_high = bcolors.FG_WHITE.BADFAIL + "●" + bcolors.FG_WHITE.ENDC
-proc_med  = bcolors.FG_WHITE.WARNING + "●" + bcolors.FG_WHITE.ENDC
-proc_low  = bcolors.FG_WHITE.OKGREEN + "●" + bcolors.FG_WHITE.ENDC
+proc_high = bcolors.BADFAIL + "●" + bcolors.ENDC
+proc_med  = bcolors.WARNING + "●" + bcolors.ENDC
+proc_low  = bcolors.OKGREEN + "●" + bcolors.ENDC
 
 # Links the vulnerability with threat level and remediation database
 def vul_remed_info(v1,v2,v3):
