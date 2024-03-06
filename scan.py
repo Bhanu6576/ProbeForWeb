@@ -247,7 +247,7 @@ class Spinner:
                     print(x,end='')
                     if inc>random.uniform(0,terminal_size()): #30 init
                         print(end="\r")
-                        bcolors.BG_SCAN_TXT_START = '\x1b[6;30;'+str(round(random.uniform(40,47)))+'m'
+                        bcolors.BG_SCAN_TXT_START = '\x1b[6;30;'+str(round(random.uniform(46,47)))+'m'
                         inc = 0
                     sys.stdout.flush()
                 time.sleep(self.delay)
