@@ -104,7 +104,7 @@ class bcolors:
     BG_LOW_TXT  = '\033[44m'
     BG_INFO_TXT = '\033[42m'
 
-    BG_SCAN_TXT_START = '\x1b[6;30;42m'
+    BG_SCAN_TXT_START = '\x1b[6;30;47m'
     BG_SCAN_TXT_END   = '\x1b[0m'
 
     @staticmethod
@@ -192,6 +192,7 @@ def logo():
         OKBLUE = '\033[94m'
         OKCYAN = '\033[96m'
         OKGREEN = '\033[92m'
+        WHITE  = '0\33[97m'
         WARNING = '\033[93m'
         FAIL = '\033[91m'
         ENDC = '\033[0m'
@@ -201,7 +202,7 @@ def logo():
     # Print logo
     print(bcolors.WARNING)
     logo_ascii = f"""
-{bcolors.OKBLUE} 
+{bcolors.WHITE} 
 
  ____            _          _____        __        __   _     
 |  _ \ _ __ ___ | |__   ___|  ___|__  _ _\ \      / /__| |__  
@@ -218,6 +219,10 @@ def logo():
 
 
 # Initiliazing the idle loader/spinner class
+class hcolours:
+  BG_SCAN_TXT_START ='\x1b[6;30;47m'
+  BG_SCAN_TXT_END = '\x1b[0m'
+  
 class Spinner:
     busy = False
     delay = 0.005 # 0.05
@@ -239,12 +244,12 @@ class Spinner:
         try:
             while self.busy:
                 if not self.disabled:
-                    x = bcolors.BG_SCAN_TXT_START+next(self.spinner_generator)+bcolors.BG_SCAN_TXT_END
+                    x = hcolors.BG_SCAN_TXT_START+next(self.spinner_generator)+hcolors.BG_SCAN_TXT_END
                     inc = inc + 1
                     print(x,end='')
                     if inc>random.uniform(0,terminal_size()): #30 init
                         print(end="\r")
-                        bcolors.BG_SCAN_TXT_START = '\x1b[6;30;'+str(round(random.uniform(40,47)))+'m'
+                        hcolors.BG_SCAN_TXT_START = '\x1b[6;30;'+str(round(random.uniform(40,47)))+'m'
                         inc = 0
                     sys.stdout.flush()
                 time.sleep(self.delay)
@@ -252,7 +257,7 @@ class Spinner:
                     sys.stdout.flush()
 
         except (KeyboardInterrupt, SystemExit):
-            print("\n\t"+ bcolors.BG_ERR_TXT+"probeforweb received a series of Ctrl+C hits. Quitting..." +bcolors.ENDC)
+            print("\n\t"+ hcolors.BG_ERR_TXT+"probeforweb received a series of Ctrl+C hits. Quitting..." +hcolors.ENDC)
             sys.exit(1)
 
     def start(self):
