@@ -242,12 +242,12 @@ class Spinner:
         try:
             while self.busy:
                 if not self.disabled:
-                    x = bcolors.BG_SCAN_TXT_START+next(self.spinner_generator)+bcolors.BG_SCAN_TXT_END
+                    x = WHITE.BG_SCAN_TXT_START+next(self.spinner_generator)+WHITE.BG_SCAN_TXT_END
                     inc = inc + 1
                     print(x,end='')
                     if inc>random.uniform(0,terminal_size()): #30 init
                         print(end="\r")
-                        bcolors.BG_SCAN_TXT_START = '\x1b[6;30;'+str(round(random.uniform(40,47)))+'m'
+                        WHITE.BG_SCAN_TXT_START = '\x1b[6;30;'+str(round(random.uniform(40,47)))+'m'
                         inc = 0
                     sys.stdout.flush()
                 time.sleep(self.delay)
@@ -255,7 +255,7 @@ class Spinner:
                     sys.stdout.flush()
 
         except (KeyboardInterrupt, SystemExit):
-            print("\n\t"+ bcolors.BG_ERR_TXT+"probeforweb received a series of Ctrl+C hits. Quitting..." +bcolors.ENDC)
+            print("\n\t"+ WHITE.BG_ERR_TXT+"probeforweb received a series of Ctrl+C hits. Quitting..." +WHITE.ENDC)
             sys.exit(1)
 
     def start(self):
