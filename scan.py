@@ -8,7 +8,7 @@
 # |_|   |_|  \___/|_.__/ \___|_|  \___/|_|    \_/\_/ \___|_.__/ 
 
 # Author     : Bhanu
-# Tool       : Probeforweb v1.2
+# Tool       : Probeforweb v1.0
 # Usage      : python3 probefortheweb.py example.com
 # Description: This scanner automates the process of security scanning by using a
 #              multitude of available linux security tools and some custom scripts.
