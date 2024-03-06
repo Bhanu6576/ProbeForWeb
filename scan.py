@@ -107,14 +107,14 @@ class bcolors:
     BG_SCAN_TXT_START = '\x1b[6;30;47m'
     BG_SCAN_TXT_END   = '\x1b[0m'
 
-    @staticmethod
-    def random_color():
-        color_codes = [
-            '\033[95m', '\033[94m', '\033[92m', '\033[93m', '\033[91m',
-            '\033[41m', '\033[100m', '\033[46m', '\033[45m', '\033[41m',
-            '\033[43m', '\033[44m', '\033[42m'
-        ]
-        return random.choice(color_codes)
+    # @staticmethod
+    # def random_color():
+    #     color_codes = [
+    #         '\033[95m', '\033[94m', '\033[92m', '\033[93m', '\033[91m',
+    #         '\033[41m', '\033[100m', '\033[46m', '\033[45m', '\033[41m',
+    #         '\033[43m', '\033[44m', '\033[42m'
+    #     ]
+    #     return random.choice(color_codes)
 
     @staticmethod
     def white():
@@ -242,7 +242,7 @@ class Spinner:
         try:
             while self.busy:
                 if not self.disabled:
-                    x = WHITE.BG_SCAN_TXT_START+next(self.spinner_generator)+WHITE.BG_SCAN_TXT_END
+                    x = bcolors.BG_SCAN_TXT_START+next(self.spinner_generator)+bcolors.BG_SCAN_TXT_END
                     inc = inc + 1
                     print(x,end='')
                     if inc>random.uniform(0,terminal_size()): #30 init
@@ -255,7 +255,7 @@ class Spinner:
                     sys.stdout.flush()
 
         except (KeyboardInterrupt, SystemExit):
-            print("\n\t"+ WHITE.BG_ERR_TXT+"probeforweb received a series of Ctrl+C hits. Quitting..." +WHITE.ENDC)
+            print("\n\t"+ bcolors.BG_ERR_TXT+"probeforweb received a series of Ctrl+C hits. Quitting..." +bcolors.ENDC)
             sys.exit(1)
 
     def start(self):
