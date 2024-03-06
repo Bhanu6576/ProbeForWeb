@@ -247,7 +247,7 @@ class Spinner:
                     print(x,end='')
                     if inc>random.uniform(0,terminal_size()): #30 init
                         print(end="\r")
-                        bcolors.BG_SCAN_TXT_START = '\x1b[6;30;37m'
+                        bcolors.BG_SCAN_TXT_START = '\x1b[6;30;37'+'m'
         
                         inc = 0
                     sys.stdout.flush()
