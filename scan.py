@@ -224,7 +224,7 @@ def logo():
 class Spinner:
     busy = False
     delay = 0.005 # 0.05
-    Scan = "Loading..."
+    Scan1 = "Loading..."
     @staticmethod
     def spinning_cursor():
         while 1:
@@ -247,7 +247,7 @@ class Spinner:
                     print(x,end='')
                     if inc>random.uniform(0,terminal_size()): #30 init
                         print(end="\r")
-                        bcolors.BG_SCAN_TXT_START = '\x1b[6;30;' + str(round(random.uniform(47, 47))) + 'm'+Scan
+                        bcolors.BG_SCAN_TXT_START = '\x1b[6;30;' + str(round(random.uniform(47, 47))) + 'm'+Scan1
                         
         
                         inc = 0
