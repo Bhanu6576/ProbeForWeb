@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
-# Probeforweb - Multi-Tool Web Scanner
-# Author: Bhanu (Enhanced by Grok)
-# Use: python3 probeforweb.py domain.com
-# Note: Download tools from https://github.com/<your-repo>/probeforweb-tools and place them in /opt/probeforweb-tools/
 
 import sys
 import argparse
@@ -82,7 +76,6 @@ TOOLS = [
     ["/opt/probeforweb-tools/gau", "GAU - URL Fetch", "gau ", "", "i", "Fetched URLs"],
     ["/opt/probeforweb-tools/git-dumper", "GitDumper - Git Exposure", "git-dumper ", "Dumped", "h", "Git repo exposed"],
     ["/opt/probeforweb-tools/trufflehog", "TruffleHog - Secrets", "trufflehog http://", "found", "h", "Secrets detected"],
-    ["/opt/probeforweb-tools/arjun", "Arjun - Param Discovery", "arjun -u ", "parameters", "m", "Hidden params found"],
     ["/opt/probeforweb-tools/dnsx", "DNSX - DNS Lookup", "dnsx -d ", "resolved", "i", "DNS records"],
     ["/opt/probeforweb-tools/cloud_enum", "CloudEnum - Cloud Assets", "cloud_enum -k ", "found", "m", "Cloud assets"],
     ["/opt/probeforweb-tools/sublist3r", "Sublist3r - Subdomains", "sublist3r -d ", "Subdomains", "m", "Subdomains found"],
